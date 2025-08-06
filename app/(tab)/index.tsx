@@ -1,33 +1,15 @@
-import { Link } from "expo-router";
-import { Pressable, Text, TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Text } from "react-native";
 import { styles } from "../../styles/auth.styles";
+import { useAuth } from "@clerk/clerk-expo";
 
 export default function Index() {
+  const { signOut } = useAuth();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Hello my name is Minh Tan</Text>
-
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => alert("Button Pressed!")}
-      >
-        <Text>Press me</Text>
+      <TouchableOpacity onPress={() => signOut()}>
+        <Text style={{ color: 'white', fontSize: 20 }}>Sign Out</Text>
       </TouchableOpacity>
-
-      <Pressable
-        style={styles.button}
-        onPress={() => alert("Pressable Pressed!")}
-      >
-        <Text>Press me</Text>
-      </Pressable>
-
-      <Link href="/profile" style={styles.button}>
-        <Text>Go to Profile</Text>
-      </Link>
-
-      <Link href="/notification" style={styles.button}>
-        <Text>Go to Notification</Text>
-      </Link>
     </View>
   );
 }
