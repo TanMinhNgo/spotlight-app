@@ -51,8 +51,8 @@ export default function TabLayout() {
         options={{ title: "Create", tabBarIcon: CreateTabBarIcon }}
       />
       <Tabs.Screen
-        name="notification"
-        options={{ title: "Notification", tabBarIcon: NotificationTabBarIcon }}
+        name="notifications"
+        options={{ title: "Notifications", tabBarIcon: NotificationTabBarIcon }}
       />
       <Tabs.Screen
         name="profile"
